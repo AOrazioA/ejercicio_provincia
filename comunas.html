@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/tailwind.min.css" rel="stylesheet">
+
+
+    <title>Comunas</title>
+</head>
+
+<body>
+
+    <div class="container mx-auto ">
+        <h1 id="titulo" class="text-4xl mt-5 text-white font-bold uppercase text-center">Buscar Comuna</h1>
+        <div class="max-w-lg mx-auto ">
+
+            <div class="p-6 mt-10">
+                <div id="resultado">
+                    <p class="text-center text-white mt-6">Agrega tu codigo y region, el resultado se mostrará aquí</p>
+                </div>
+            </div>
+
+            <form id="formulario" class="mt-10 " action="#" method="POST">
+                
+                <div class="mt-5">
+                    <input type="text" name="ciudad" id="ciudad" onkeypress="return solonumeros(event)"
+                        placeholder="Escribe el código de la comuna . Ejemplo: 05602 " class="w-full p-2 rounded" />
+                </div>
+
+                <div class="mt-5">
+                    <select
+                        class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="pais">
+
+                        <option value="0" selected="selected">Comunas...</option>
+                        <option value="05602">05602 ALGARROBO</option>
+                        <option value="13502">13502 ALHUE</option>
+                        <option value="08314">08314 ALTO BIOBIO</option>
+                        <option value="03302">03302 ALTO DEL CARMEN</option>
+                        <option value="01107">01107 ALTO HOSPICIO</option>
+                        <option value="10202">10202 ANCUD</option>
+                        <option value="04103">04103 ANDACOLLO</option>
+                        <option value="09201">09201 ANGOL</option>
+                        <option value="12202">12202 ANTARTICA</option>
+                        <option value="02101">02101 ANTOFAGASTA</option>
+                        <option value="08302">08302 ANTUCO</option>
+                        <option value="08202">08202 ARAUCO</option>
+                        <option value="15101">15101 ARICA</option>
+                        <option value="11201">11201 AYSEN</option>
+                        <option value="13402">13402 BUIN</option>
+                        <option value="16102">16102 BULNES</option>
+                        <option value="05402">05402 CABILDO</option>
+                        <option value="12201">12201 CABO DE HORNOS(EX-NAVARINO)</option>
+                        <option value="08303">08303 CABRERO</option>
+                        <option value="02201">02201 CALAMA</option>
+                        <option value="10102">10102 CALBUCO</option>
+                        <option value="03102">03102 CALDERA</option>
+                        <option value="05502">05502 CALERA</option>
+                        <option value="13403">13403 CALERA DE TANGO</option>
+                        <option value="05302">05302 CALLE LARGA</option>
+                        <option value="15102">15102 CAMARONES</option>
+                        <option value="01402">01402 CAMIÑA</option>
+                        <option value="04202">04202 CANELA</option>
+                        <option value="08203">08203 CAÑETE</option>
+                        <option value="09102">09102 CARAHUE</option>
+                        <option value="05603">05603 CARTAGENA</option>
+                        <option value="05102">05102 CASABLANCA</option>
+                        <option value="10201">10201 CASTRO</option>
+                        <option value="05702">05702 CATEMU</option>
+                        <option value="07201">07201 CAUQUENES</option>
+                        <option value="13102">13102 CERRILLOS</option>
+                        <option value="13103">13103 CERRO NAVIA</option>
+                        <option value="10401">10401 CHAITEN</option>
+                        <option value="03201">03201 CHAÑARAL</option>
+                        <option value="07202">07202 CHANCO</option>
+                        <option value="06302">06302 CHEPICA</option>
+                        <option value="08103">08103 CHIGUAYANTE</option>
+                        <option value="11401">11401 CHILE CHICO</option>
+                        <option value="16101">16101 CHILLAN</option>
+                        <option value="16103">16103 CHILLAN VIEJO</option>
+                        <option value="06303">06303 CHIMBARONGO</option>
+                        <option value="09121">09121 CHOLCHOL</option>
+                        <option value="10203">10203 CHONCHI</option>
+                        <option value="11202">11202 CISNES</option>
+                        <option value="16202">16202 COBQUECURA</option>
+                        <option value="10103">10103 COCHAMO</option>
+                        <option value="11301">11301 COCHRANE</option>
+                        <option value="06102">06102 CODEGUA</option>
+                        <option value="16203">16203 COELEMU</option>
+                        <option value="16302">16302 COIHUECO</option>
+                        <option value="06103">06103 COINCO</option>
+                        <option value="07402">07402 COLBUN</option>
+                        <option value="01403">01403 COLCHANE</option>
+                        <option value="13301">13301 COLINA</option>
+                        <option value="09202">09202 COLLIPULLI</option>
+                        <option value="06104">06104 COLTAUCO</option>
+                        <option value="04302">04302 COMBARBALA</option>
+                        <option value="08101">08101 CONCEPCION</option>
+                        <option value="13104">13104 CONCHALI</option>
+                        <option value="05103">05103 CONCON</option>
+                        <option value="07102">07102 CONSTITUCION</option>
+                        <option value="08204">08204 CONTULMO</option>
+                        <option value="03101">03101 COPIAPO</option>
+                        <option value="04102">04102 COQUIMBO</option>
+                        <option value="08102">08102 CORONEL</option>
+                        <option value="14102">14102 CORRAL</option>
+                        <option value="11101">11101 COYHAIQUE</option>
+                        <option value="09103">09103 CUNCO</option>
+                        <option value="09203">09203 CURACAUTIN</option>
+                        <option value="13503">13503 CURACAVI</option>
+                        <option value="10204">10204 CURACO DE VELEZ</option>
+                        <option value="08205">08205 CURANILAHUE</option>
+                        <option value="09104">09104 CURARREHUE</option>
+                        <option value="07103">07103 CUREPTO</option>
+                        <option value="07301">07301 CURICO</option>
+                        <option value="10205">10205 DALCAHUE</option>
+                        <option value="03202">03202 DIEGO DE ALMAGRO</option>
+                        <option value="06105">06105 DOÑIHUE</option>
+                        <option value="13105">13105 EL BOSQUE</option>
+                        <option value="16104">16104 EL CARMEN</option>
+                        <option value="13602">13602 EL MONTE</option>
+                        <option value="05604">05604 EL QUISCO</option>
+                        <option value="05605">05605 EL TABO</option>
+                        <option value="07104">07104 EMPEDRADO</option>
+                        <option value="09204">09204 ERCILLA</option>
+                        <option value="13106">13106 ESTACION CENTRAL</option>
+                        <option value="08104">08104 FLORIDA</option>
+                        <option value="09105">09105 FREIRE</option>
+                        <option value="03303">03303 FREIRINA</option>
+                        <option value="10104">10104 FRESIA</option>
+                        <option value="10105">10105 FRUTILLAR</option>
+                        <option value="10402">10402 FUTALEUFU</option>
+                        <option value="14202">14202 FUTRONO</option>
+                        <option value="09106">09106 GALVARINO</option>
+                        <option value="15202">15202 GENERAL LAGOS</option>
+                        <option value="09107">09107 GORBEA</option>
+                        <option value="06106">06106 GRANEROS</option>
+                        <option value="11203">11203 GUAITECAS</option>
+                        <option value="05503">05503 HIJUELAS</option>
+                        <option value="10403">10403 HUALAIHUE</option>
+                        <option value="07302">07302 HUALAÑE</option>
+                        <option value="08112">08112 HUALPEN</option>
+                        <option value="08105">08105 HUALQUI</option>
+                        <option value="01404">01404 HUARA</option>
+                        <option value="03304">03304 HUASCO</option>
+                        <option value="13107">13107 HUECHURABA</option>
+                        <option value="04201">04201 ILLAPEL</option>
+                        <option value="13108">13108 INDEPENDENCIA</option>
+                        <option value="01101">01101 IQUIQUE</option>
+                        <option value="13603">13603 ISLA DE MAIPO</option>
+                        <option value="05201">05201 ISLA DE PASCUA</option>
+                        <option value="05104">05104 JUAN FERNANDEZ</option>
+                        <option value="13109">13109 LA CISTERNA</option>
+                        <option value="05504">05504 LA CRUZ</option>
+                        <option value="06202">06202 LA ESTRELLA</option>
+                        <option value="13110">13110 LA FLORIDA</option>
+                        <option value="14203">14203 LAGO RANCO</option>
+                        <option value="11102">11102 LAGO VERDE</option>
+                        <option value="13111">13111 LA GRANJA</option>
+                        <option value="12102">12102 LAGUNA BLANCA</option>
+                        <option value="04104">04104 LA HIGUERA</option>
+                        <option value="08304">08304 LAJA</option>
+                        <option value="05401">05401 LA LIGUA</option>
+                        <option value="13302">13302 LAMPA</option>
+                        <option value="14103">14103 LANCO</option>
+                        <option value="13113">13113 LA PINTANA</option>
+                        <option value="13113">13113 LA REINA</option>
+                        <option value="06107">06107 LAS CABRAS</option>
+                        <option value="13114">13114 LAS CONDES</option>
+                        <option value="04101">04101 LA SERENA</option>
+                        <option value="14201">14201 LA UNION</option>
+                        <option value="09108">09108 LAUTARO</option>
+                        <option value="08201">08201 LEBU</option>
+                        <option value="07303">07303 LICANTEN</option>
+                        <option value="05802">05802 LIMACHE</option>
+                        <option value="07401">07401 LINARES</option>
+                        <option value="61271">61271 LITUECHE</option>
+                        <option value="61192">61192 LLAILLAY</option>
+                        <option value="10107">10107 LLANQUIHUE</option>
+                        <option value="13115">13115 LO BARNECHEA</option>
+                        <option value="13116">13116 LO ESPEJO</option>
+                        <option value="06304">06304 LOLOL</option>
+                        <option value="09109">09109 LONCOCHE</option>
+                        <option value="07403">07403 LONGAVI</option>
+                        <option value="09205">09205 LONQUIMAY</option>
+                        <option value="13117">13117 LO PRADO</option>
+                        <option value="08206">08206 LOS ALAMOS</option>
+                        <option value="05301">05301 LOS ANDES</option>
+                        <option value="08301">08301 LOS ANGELES</option>
+                        <option value="14104">14104 LOS LAGOS</option>
+                        <option value="10106">10106 LOS MUERMOS</option>
+                        <option value="09206">09206 LOS SAUCES</option>
+                        <option value="04203">04203 LOS VILOS</option>
+                        <option value="08106">08106 LOTA</option>
+                        <option value="09207">09207 LUMACO</option>
+                        <option value="06108">06108 MACHALI</option>
+                        <option value="13118">13118 MACUL</option>
+                        <option value="14105">14105 MAFIL</option>
+                        <option value="13119">13119 MAIPU</option>
+                        <option value="06109">06109 MALLOA</option>
+                        <option value="06204">06204 MARCHIGUE</option>
+                        <option value="02302">MARIA ELENA</option>
+                        <option value="13504">13504 MARIA PINTO</option>
+                        <option value="14106">14106 MARIQUINA</option>
+                        <option value="07105">07105 MAULE</option>
+                        <option value="10108">10108 MAULLIN</option>
+                        <option value="02102">02102 MEJILLONES</option>
+                        <option value="09110">09110 MELIPEUCO</option>
+                        <option value="13501">13501 MELIPILLA</option>
+                        <option value="07304">07304 MOLINA</option>
+                        <option value="04303">04303 MONTE PATRIA</option>
+                        <option value="06110">06110 MOSTAZAL</option>
+                        <option value="08305">08305 MULCHEN</option>
+                        <option value="08306">08306 NACIMIENTO</option>
+                        <option value="06305">06305 NANCAGUA</option>
+                        <option value="12401">12401 NATALES</option>
+                        <option value="06205">06205 NAVIDAD</option>
+                        <option value="08307">08307 NEGRETE</option>
+                        <option value="16204">16204 NINHUE</option>
+                        <option value="16303">16303 ÑIQUEN</option>
+                        <option value="05506">05506 NOGALES</option>
+                        <option value="09111">09111 NUEVA IMPERIAL</option>
+                        <option value="13120">13120 ÑUÑOA</option>
+                        <option value="11302">11302 O'HIGGINS</option>
+                        <option value="06111">06111 OLIVAR</option>
+                        <option value="02202">02202 OLLAGUE</option>
+                        <option value="05803">05803 OLMUE</option>
+                        <option value="10301">10301 OSORNO</option>
+                        <option value="04301">04301 OVALLE</option>
+                        <option value="13604">13604 PADRE HURTADO</option>
+                        <option value="09112">09112 PADRE LAS CASAS</option>
+                        <option value="04105">04105 PAIHUANO</option>
+                        <option value="14107">14107 PAILLACO</option>
+                        <option value="13404">13404 PAINE</option>
+                        <option value="10404">10404 PALENA</option>
+                        <option value="06306">06306 PALMILLA</option>
+                        <option value="14108">14108 PANGUIPULLI</option>
+                        <option value="05704">05704 PANQUEHUE</option>
+                        <option value="05403">05403 PAPUDO</option>
+                        <option value="06206">06206 PAREDONES</option>
+                        <option value="07404">07404 PARRAL</option>
+                        <option value="13121">13121 PEDRO AGUIRRE CERDA</option>
+                        <option value="07106">07106 PELARCO</option>
+                        <option value="07203">07203 PELLUHUE</option>
+                        <option value="61318">61318 PEMUCO</option>
+                        <option value="13605">13605 PEÑAFLOR</option>
+                        <option value="13122">13122 PEÑALOLEN</option>
+                        <option value="07107">07107 PENCAHUE</option>
+                        <option value="08107">08107 PENCO</option>
+                        <option value="06307">06307 PERALILLO</option>
+                        <option value="09113">09113 PERQUENCO</option>
+                        <option value="05404">05404 PETORCA</option>
+                        <option value="06112">06112 PEUMO</option>
+                        <option value="01405">01405 PICA</option>
+                        <option value="06113">06113 PICHIDEGUA</option>
+                        <option value="06201">06201 PICHILEMU</option>
+                        <option value="16106">16106 PINTO</option>
+                        <option value="13202">16106 PIRQUE</option>
+                        <option value="09114">09114 PITRUFQUEN</option>
+                        <option value="06308">06308 PLACILLA</option>
+                        <option value="16205">16205 PORTEZUELO</option>
+                        <option value="12301">12301 PORVENIR</option>
+                        <option value="61127">61127 POZO ALMONTE</option>
+                        <option value="61459">61459 PRIMAVERA</option>
+                        <option value="13123">13123 PROVIDENCIA</option>
+                        <option value="05105">05105 PUCHUNCAVI</option>
+                        <option value="09115">09115 PUCON</option>
+                        <option value="13124">13124 PUDAHUEL</option>
+                        <option value="13201">13201 PUENTE ALTO</option>
+                        <option value="10101">10101 PUERTO MONTT</option>
+                        <option value="10302">10302 PUERTO OCTAY</option>
+                        <option value="10109">10109 PUERTO VARAS</option>
+                        <option value="06309">06309 PUMANQUE</option>
+                        <option value="04304">04304 PUNITAQUI</option>
+                        <option value="12101">12101 PUNTA ARENAS</option>
+                        <option value="10206">10206 PUQUELDON</option>
+                        <option value="09208">09208 PUREN</option>
+                        <option value="10303">10303 PURRANQUE</option>
+                        <option value="10304">10304 PUTAENDO</option>
+                        <option value="15201">15201 PUTRE</option>
+                        <option value="10207">10207 PUYEHUE</option>
+                        <option value="10207">10207 QUEILEN</option>
+                        <option value="10208">10208 QUELLON</option>
+                        <option value="10209">10209 QUEMCHI</option>
+                        <option value="08308">08308 QUILACO</option>
+                        <option value="13125">13125 QUILICURA</option>
+                        <option value="08309">08309 QUILLECO</option>
+                        <option value="16107">16107 QUILLON</option>
+                        <option value="05501">05501 QUILLOTA</option>
+                        <option value="05801">05801 QUILPUE</option>
+                        <option value="10210">10210 QUINCHAO</option>
+                        <option value="06114">06114 QUINTA DE TILCOCO</option>
+                        <option value="13126">13126 QUINTA NORMAL</option>
+                        <option value="05107">05107 QUINTERO</option>
+                        <option value="16201">16201 QUIRIHUE</option>
+                        <option value="06101">06101 RANCAGUA</option>
+                        <option value="16206">16206 RANQUIL</option>
+                        <option value="07305">07305 RAUCO</option>
+                        <option value="13127">13127 RECOLETA</option>
+                        <option value="09209">09209 RENAICO</option>
+                        <option value="13128">13128 RENCA</option>
+                        <option value="06115">06115 RENGO</option>
+                        <option value="61252">61252 REQUINOA</option>
+                        <option value="07405">07405 RETIRO</option>
+                        <option value="05303">05303 RINCONADA</option>
+                        <option value="14204">14204 RIO BUENO</option>
+                        <option value="07108">07108 RIO CLARO</option>
+                        <option value="04305">04305 RIO HURTADO</option>
+                        <option value="11402">11402 RIO IBAÑEZ</option>
+                        <option value="10305">10305 RIO NEGRO</option>
+                        <option value="12103">12103 RIO VERDE</option>
+                        <option value="07306">07306 ROMERAL</option>
+                        <option value="09116">09116 SAAVEDRA</option>
+                        <option value="07307">07307 SAGRADA FAMILIA</option>
+                        <option value="04204">04204 SALAMANCA</option>
+                        <option value="05601">05601 SAN ANTONIO</option>
+                        <option value="13401">13401 SAN BERNARDO</option>
+                        <option value="16301">16301 SAN CARLOS</option>
+                        <option value="07109">07109 SAN CLEMENTE</option>
+                        <option value="05304">05304 SAN ESTEBAN</option>
+                        <option value="16304">16304 SAN FABIAN</option>
+                        <option value="05701">05701 SAN FELIPE</option>
+                        <option value="06301">06301 SAN FERNANDO</option>
+                        <option value="12104">12104 SAN GREGORIO</option>
+                        <option value="16108">16108 SAN IGNACIO</option>
+                        <option value="07406">07406 SAN JAVIER</option>
+                        <option value="13129">13129 SAN JOAQUIN</option>
+                        <option value="13203">13203 SAN JOSE DE MAIPO</option>
+                        <option value="10306">10306 SAN JUAN DE LA COSTA</option>
+                        <option value="13130">13130 SAN MIGUEL</option>
+                        <option value="16305">16305 SAN NICOLAS</option>
+                        <option value="10307">10307 SAN PABLO</option>
+                        <option value="61241">61241 SAN PEDRO</option>
+                        <option value="02203">02203 SAN PEDRO DE ATACAMA</option>
+                        <option value="08108">08108 SAN PEDRO DE LA PAZ</option>
+                        <option value="07110">07110 SAN RAFAEL</option>
+                        <option value="13131">13131 SAN RAMON</option>
+                        <option value="08310">08310 SAN ROSENDO</option>
+                        <option value="08311">08311 SANTA BARBARA</option>
+                        <option value="06310">06310 SANTA CRUZ</option>
+                        <option value="08109">08109 SANTA JUANA</option>
+                        <option value="05706">05706 SANTA MARIA</option>
+                        <option value="13101">13101 SANTIAGO</option>
+                        <option value="05606">05606 SANTO DOMINGO</option>
+                        <option value="06117">06117 SAN VICENTE</option>
+                        <option value="02103">02103 SIERRA GORDA</option>
+                        <option value="13601">13601 TALAGANTE</option>
+                        <option value="07101">07101 TALCA</option>
+                        <option value="08110">08110 TALCAHUANO</option>
+                        <option value="02104">02104 TALTAL</option>
+                        <option value="09101">09101 TEMUCO</option>
+                        <option value="07308">07308 TENO</option>
+                        <option value="09117">09117 TEODORO SCHMIDT</option>
+                        <option value="03103">03103 TIERRA AMARILLA</option>
+                        <option value="13303">13303 TILTIL</option>
+                        <option value="12303">12303 TIMAUKEL</option>
+                        <option value="08207">08207 TIRUA</option>
+                        <option value="02301">02301 TOCOPILLA</option>
+                        <option value="09118">09118 TOLTEN</option>
+                        <option value="08111">08111 TOME</option>
+                        <option value="12402">12402 TORRES DEL PAINE</option>
+                        <option value="11303">11303 TORTEL</option>
+                        <option value="09210">09210 TRAIGUEN</option>
+                        <option value="16207">16207 TREHUACO</option>
+                        <option value="08312">08312 TUCAPEL</option>
+                        <option value="14101">14101 VALDIVIA</option>
+                        <option value="03301">03301 VALLENAR</option>
+                        <option value="05101">05101 VALPARAISO</option>
+                        <option value="07309">07309 VICHUQUEN</option>
+                        <option value="09211">09211 VICTORIA</option>
+                        <option value="04106">04106 VICUÑA</option>
+                        <option value="09119">09119 VILCUN</option>
+                        <option value="05804">05804 VILLA ALEGRE</option>
+                        <option value="61195">61195 VILLA ALEMANA</option>
+                        <option value="09120">09120 VILLARRICA</option>
+                        <option value="05109">05109 VIÑA DEL MAR</option>
+                        <option value="61215">61215 VITACURA</option>
+                        <option value="07408">07408 YERBAS BUENAS</option>
+                        <option value="08313">08313 YUMBEL</option>
+                        <option value="16109">16109 YUNGAY</option>
+                        <option value="05405">05405 ZAPALLAR</option>
+                    </select>
+
+
+
+
+                </div>
+
+                <input type="submit" class="mt-5 w-full bg-yellow-500 p-3  uppercase font-bold cursor-pointer rounded"
+                    value="Obtener Datos" />
+                <input id="btn" type="button"
+                    class="mt-5 w-full bg-yellow-500 p-3  uppercase font-bold cursor-pointer rounded" value="Volver" />
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="assets/js/comunas.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/tailwind.min.css" rel="stylesheet">
+
+
+    <title>Provincias</title>
+</head>
+
+
+<body>
+
+
+    <div class="container mx-auto ">
+        <h1 id="titulo" class="text-4xl mt-5 text-white font-bold uppercase text-center">Buscar Provincias</h1>
+        <div class="max-w-lg mx-auto ">
+
+            <div class="p-6 mt-10">
+                <div id="resultado">
+                    <p class="text-center text-white mt-6">Agrega tu código de la provincia , el resultado se mostrará aquí</p>
+                </div>
+            </div>
+
+            <form id="formulario" class="mt-10 " action="#" method="POST">
+                <div class="mt-5">
+                    <input type="text" name="ciudad" id="ciudad" onkeypress="return solonumeros(event)"
+                        onpaste="return false" placeholder="Escribe el código de tu provincia . Ejemplo: 122"
+                        class="w-full p-2 rounded" />
+                </div>
+
+
+
+                <input type="submit" class="mt-5 w-full bg-yellow-500 p-3  uppercase font-bold cursor-pointer rounded"
+                    value="Obtener Datos" />
+                <input id="btn" type="button"   class="mt-5 w-full bg-yellow-500 p-3  uppercase font-bold cursor-pointer rounded"
+                    value="Volver"/>
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container mt-4 shadow-lg p3 mb-5 bg-body rounded">
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Provincia</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="data">
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+    <script src="assets/js/provincias.js"></script>
+</body>
+
+</html>

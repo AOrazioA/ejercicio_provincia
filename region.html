@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima - JavaScript Moderno</title>
+
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container mx-auto ">
+        <h1 id="titulo" class="text-4xl mt-5 text-white font-bold uppercase text-center">Buscar Region</h1>
+        <div class="max-w-lg mx-auto ">
+
+            <div class="p-6 mt-10">
+                <div id="resultado">
+                    <p class="text-center text-white mt-6">Agrega tu codigo y region, el resultado se mostrará aquí</p>
+                </div>
+            </div>
+
+            <form id="formulario" class="mt-10 " action="#" method="POST">
+                <div class="mt-5">
+                    <input type="text" name="ciudad" id="ciudad" onkeypress="return solonumeros(event)"
+                        placeholder="Escribe el código de tu región . Ejemplo: 15" class="w-full p-2 rounded" />
+                </div>
+                <div class="mt-5">
+                    <select
+                        class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        id="pais">
+                        <option disabled selected value="">-- Seleccione --</option>
+                        <option value="0" selected="selected">Regiones...</option>
+                        <option value="13669">DE ARICA Y PARINACOTA</option>
+                        <option value="13670">DE TARAPACA</option>
+                        <option value="13671">DE ANTOFAGASTA</option>
+                        <option value="13672">DE ATACAMA</option>
+                        <option value="13673">DE COQUIMBO</option>
+                        <option value="13674">DE VALPARAISO</option>
+                        <option value="13675">METROPOLITANA DE SANTIAGO</option>
+                        <option value="13676">DEL LIBERTADOR GENERAL BERNARDO O'HIGGINS</option>
+                        <option value="13677">DEL MAULE</option>
+                        <option value="13678">DE ÑUBLE</option>
+                        <option value="13679">DEL BIOBIO</option>
+                        <option value="13680">DE LA ARAUCANIA</option>
+                        <option value="13681">DE LOS RIOS</option>
+                        <option value="13682">DE LOS LAGOS</option>
+                        <option value="13683">DE AYSEN DEL GENERAL CARLOS IBAÑEZ DEL CAMPO</option>
+                        <option value="13684">DE MAGALLANES Y DE LA ANTARTICA CHILENA</option>
+
+                    </select>
+                </div>
+
+                <input type="submit" class="mt-5 w-full bg-yellow-500 p-3  uppercase font-bold cursor-pointer rounded"
+                    value="Obtener Datos"/>
+                    <input id="btn" type="button"   class="mt-5 w-full bg-yellow-500 p-3  uppercase font-bold cursor-pointer rounded"
+                    value="Volver"/>
+
+            </form>
+
+
+        </div>
+    </div>
+
+    <div class="container mt-4 shadow-lg p3 mb-5 bg-body rounded">
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Region</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="data">
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+
+
+    <script src="assets/js/region.js"></script>
+</body>
+
+</html>
